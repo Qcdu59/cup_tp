@@ -1,0 +1,13 @@
+import java_cup.runtime.*;
+
+terminal PLUS, MINUS, TIMES, PB, PE, NUM;
+non terminal e, t, f;
+start with e;
+
+e ::= e PLUS t;
+e ::= e MINUS t; 
+e ::= t;
+t ::= t TIMES f;
+t ::= f;
+f ::= PB e PE;
+f ::= NUM;
